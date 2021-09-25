@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
- 
+
 import '../models/category.dart';
- 
+
+// ignore: unnecessary_const, constant_identifier_names
 const DUMMY_CATEGORIES = const [
   Category(
     id: 'c1',
