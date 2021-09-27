@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
             .copyWith(secondary: Colors.amber),
       ),
       routes: {
-        AppRoutes.HOME: (ctx) => CategoriesScreen(),
+        AppRoutes.HOME: (ctx) => const CategoriesScreen(),
         AppRoutes.CATEGORIES_MEALS: (ctx) => CategoriesMealsScreen(),
       },
     );
