@@ -55,10 +55,15 @@ const DUMMY_CATEGORIES = [
     title: 'Verão',
     color: Colors.teal,
   ),
+  Category(
+    id: 'c11',
+    title: 'Evelyn',
+    color: Colors.grey,
+  ),
 ];
 
 // ignore: constant_identifier_names
-const DUMMY_MEALS = [
+const List<Meal> DUMMY_MEALS = [
   Meal(
     id: 'm1',
     categories: ['c1', 'c2'],
@@ -374,6 +379,29 @@ const DUMMY_MEALS = [
       'Halve the tomatoes',
       'Mix with asparagus, salad and dressing',
       'Serve with Baguette'
+    ],
+    isGlutenFree: true,
+    isVegan: true,
+    isVegetarian: true,
+    isLactoseFree: true,
+  ),
+  Meal(
+    id: 'm11',
+    categories: ['c11'],
+    title: 'Teste trazendo foto da Internet',
+    cost: Cost.Expensive,
+    complexity: Complexity.Simple,
+    imageUrl:
+        'https://scontent.fpmg1-1.fna.fbcdn.net/v/t1.6435-9/52871729_2160786910673532_1497716849154981888_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=84a396&_nc_ohc=7G8ZZ2KwsyEAX98FzYF&tn=-tpED7g5Ms3bi2gC&_nc_ht=scontent.fpmg1-1.fna&oh=43d40eb25b42bd5571a80842b6506627&oe=617C4A38',
+    duration: 10000,
+    ingredients: [
+      'Foto do Facebook',
+      'Bem antiga',
+      'Evelyn ainda Bebê',
+    ],
+    steps: [
+      'Festa aniversário',
+      'Recordações',
     ],
     isGlutenFree: true,
     isVegan: true,
