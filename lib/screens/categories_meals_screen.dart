@@ -3,9 +3,12 @@ import 'package:meals/components/meal_item.dart';
 import 'package:meals/data/dummy_data.dart';
 
 import '../models/category.dart';
+import '../models/meal.dart';
 
 class CategoriesMealsScreen extends StatelessWidget {
-  const CategoriesMealsScreen({Key? key}) : super(key: key);
+  final List<Meal> meals;
+
+  const CategoriesMealsScreen(this.meals, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
