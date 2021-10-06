@@ -2,13 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:meals/models/meal.dart';
 
 class MealDetailScreen extends StatelessWidget {
-  const MealDetailScreen({Key? key}) : super(key: key);
+  final Function(Meal) onToggleFavorite;
+  final bool Function(Meal) isFavorite;
+
+  const MealDetailScreen(this.onToggleFavorite, this.isFavorite, {Key? key})
+      : super(key: key);
 
   Widget _createSectionTitle(BuildContext context, String title) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 10),
       child: Text(
-        'Ingredientes',
+        title,
         style: Theme.of(context).textTheme.subtitle1,
       ),
     );
@@ -17,7 +21,7 @@ class MealDetailScreen extends StatelessWidget {
   Widget _createSectionContainer(Widget child) {
     return Container(
       width: 330,
-      height: 200,
+      height: 250,
       padding: const EdgeInsets.all(10),
       margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
@@ -60,7 +64,7 @@ class MealDetailScreen extends StatelessWidget {
                       ),
                       child: Text(meal.ingredients[index]),
                     ),
-                    color: Colors.amber,
+                    color: Theme.of(context).colorScheme.secondary,
                   );
                 },
               ),
@@ -88,10 +92,11 @@ class MealDetailScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.star),
-          onPressed: () {
-            Navigator.of(context).pop();
-          }),
+        child: Icon(isFavorite(meal) ? Icons.star : Icons.star_border),
+        onPressed: () {
+          onToggleFavorite(meal);
+        },
+      ),
     );
   }
 }

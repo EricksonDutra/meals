@@ -10,7 +10,7 @@ class SettingsScreen extends StatefulWidget {
   const SettingsScreen(this.settings, this.onSettingsChanged);
 
   @override
-  State<SettingsScreen> createState() => _SettingsScreenState();
+  _SettingsScreenState createState() => _SettingsScreenState();
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
